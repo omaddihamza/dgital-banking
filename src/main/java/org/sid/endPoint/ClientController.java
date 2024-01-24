@@ -1,8 +1,10 @@
 package org.sid.endPoint;
 
-import org.sid.entities.Client;
+import org.sid.dto.ClientDTO;
 import org.sid.services.IClientMetier;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +18,8 @@ public class ClientController {
     private IClientMetier clientMetier;
 
     @PostMapping("/ajouter")
-    public void ajouterClient(Client client) {
-        clientMetier.ajouterClient(client);
+    public ResponseEntity<String> ajouterClient(ClientDTO clientDTO) {
+        clientMetier.ajouterClient(clientDTO);
+        return  ResponseEntity.status(HttpStatus.CREATED).body("Client added successfully");
     }
 }

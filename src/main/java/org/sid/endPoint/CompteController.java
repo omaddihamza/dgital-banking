@@ -1,5 +1,7 @@
 package org.sid.endPoint;
 
+import org.sid.dto.CompteCourantDTO;
+import org.sid.dto.CompteEpargneDTO;
 import org.sid.entities.CompteCourant;
 import org.sid.entities.CompteEpargne;
 import org.sid.services.ICompteMetier;
@@ -15,12 +17,12 @@ public class CompteController {
     private ICompteMetier compteMetier;
 
     @PostMapping("/ajouter/comptercourant")
-    public void ajouterCompteCourant(CompteCourant compteCourant) {
-        compteMetier.ajouterCompteCourant(compteCourant);
+    public void ajouterCompteCourant(CompteCourantDTO compteCourantDTO) {
+        compteMetier.ajouterCompteCourant(compteCourantDTO);
     }
 
     @PostMapping("ajouter/compteepargne")
-    public void ajouterCompteEpargne(CompteEpargne compteEpargne) {
-        compteMetier.ajouterCompteEpargne(compteEpargne);
+    public void ajouterCompteEpargne(CompteEpargneDTO compteEpargneDTO) {
+        compteMetier.ajouterCompteEpargne(compteEpargneDTO);
     }
 }
