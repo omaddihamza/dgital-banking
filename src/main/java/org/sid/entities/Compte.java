@@ -1,11 +1,10 @@
 package org.sid.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Collection;
+
 import java.util.Date;
 @Entity
 @Data
@@ -20,8 +19,6 @@ public abstract class Compte {
     @ManyToOne
     @JoinColumn(name ="CODE_CLI" )
     private Client client;
-    @OneToMany(mappedBy = "compte", fetch = FetchType.LAZY)
-    private Collection<Operation> operations;
 
     public Compte(String codeCompte, Date dateCreation, double solde, Client client) {
         this.codeCompte = codeCompte;
