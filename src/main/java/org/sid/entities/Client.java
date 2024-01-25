@@ -21,6 +21,7 @@ public class Client {
         @Temporal(TemporalType.DATE)
         private Date dateDeNaissance;
         private String telephone;
+        private String identifiant;
         private String email;
         @Enumerated(EnumType.STRING)
         private Genre genre;
