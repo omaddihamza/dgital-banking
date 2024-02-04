@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { Client } from '../model/Client';
-import { ClientService } from '../Services/client.service';
+import { Client } from '../../model/Client';
+import { ClientService } from '../../Services/client.service';
 
 @Component({
   selector: 'app-client',

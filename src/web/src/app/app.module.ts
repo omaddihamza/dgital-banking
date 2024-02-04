@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ClientComponent } from './client/client.component';
+import { ClientComponent } from './clients/client/client.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 import { CompteEpargneComponent } from './comptes/compte-epargne/compte-epargne.component';
 import { CompteCourantComponent } from './comptes/compte-courant/compte-courant.component';
+import { ClientDetailsComponent } from './clients/client-details/client-details.component';
 
 
 
@@ -31,7 +32,8 @@ import { CompteCourantComponent } from './comptes/compte-courant/compte-courant.
     NavbarComponent,
     ClientComponent,
     CompteEpargneComponent,
-    CompteCourantComponent
+    CompteCourantComponent,
+    ClientDetailsComponent
   ],
   imports: [
     BrowserModule,
