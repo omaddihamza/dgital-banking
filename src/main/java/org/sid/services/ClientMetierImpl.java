@@ -6,6 +6,8 @@ import org.sid.entities.Client;
 import org.sid.entities.CompteCourant;
 import org.sid.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,5 +21,10 @@ public class ClientMetierImpl implements IClientMetier {
     public void ajouterClient(ClientDTO clientDTO) {
         Client client = modelMapper.map(clientDTO, Client.class);
         clientRepository.save(client);
+    }
+
+    @Override
+    public Page<Client> listClients(Pageable pageable) {
+        return clientRepository.findAll(pageable);
     }
 }
